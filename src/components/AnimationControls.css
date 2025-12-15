@@ -1,0 +1,79 @@
+.controls-container {
+  margin-top: 30px;
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control-button.paused {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.control-button.paused:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-button.playing {
+  background: linear-gradient(135deg, #f44336, #e53935);
+  color: white;
+}
+
+.control-button.playing:hover {
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-button:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.button-icon {
+  font-size: 20px;
+}
+
+.button-text {
+  letter-spacing: 1px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .control-button {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+
+  .button-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .button-icon {
+    font-size: 16px;
+  }
+}
