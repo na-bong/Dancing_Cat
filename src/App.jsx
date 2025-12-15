@@ -5,7 +5,7 @@ import './styles/animations.css';
 import './App.css';
 
 function App() {
-  const { isPlaying, toggle } = useAnimation(true);
+  const { isPlaying, speed, toggle, changeSpeed } = useAnimation(true);
 
   return (
     <div className="app">
@@ -15,8 +15,13 @@ function App() {
       </header>
 
       <main className="app-main">
-        <DancingCat isPlaying={isPlaying} />
-        <AnimationControls isPlaying={isPlaying} onToggle={toggle} />
+        <DancingCat isPlaying={isPlaying} speed={speed} />
+        <AnimationControls
+          isPlaying={isPlaying}
+          onToggle={toggle}
+          speed={speed}
+          onSpeedChange={changeSpeed}
+        />
       </main>
 
       <footer className="app-footer">

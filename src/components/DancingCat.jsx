@@ -1,9 +1,14 @@
 import CatSvg from '../assets/images/Cat';
 import './DancingCat.css';
 
-const DancingCat = ({ isPlaying }) => {
+const DancingCat = ({ isPlaying, speed = 1 }) => {
+  const animationDuration = 1 / speed;
+
   return (
-    <div className="dancing-cat-container">
+    <div
+      className="dancing-cat-container"
+      style={{ '--animation-speed': `${animationDuration}s` }}
+    >
       <div className={`cat-wrapper ${isPlaying ? 'dancing' : ''}`}>
         <CatSvg className="cat-svg" />
       </div>

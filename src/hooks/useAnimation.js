@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 
 const useAnimation = (initialState = false) => {
   const [isPlaying, setIsPlaying] = useState(initialState);
+  const [speed, setSpeed] = useState(1);
 
   const toggle = useCallback(() => {
     setIsPlaying(prev => !prev);
@@ -15,11 +16,17 @@ const useAnimation = (initialState = false) => {
     setIsPlaying(false);
   }, []);
 
+  const changeSpeed = useCallback((newSpeed) => {
+    setSpeed(newSpeed);
+  }, []);
+
   return {
     isPlaying,
+    speed,
     toggle,
     start,
-    stop
+    stop,
+    changeSpeed
   };
 };
 

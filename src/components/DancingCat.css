@@ -1,4 +1,5 @@
 .dancing-cat-container {
+  --animation-speed: 1s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +14,7 @@
 }
 
 .cat-wrapper.dancing {
-  animation: dance 1s ease-in-out infinite;
+  animation: dance var(--animation-speed) ease-in-out infinite;
 }
 
 .cat-svg {
@@ -32,7 +33,7 @@
 }
 
 .cat-shadow.shadow-dancing {
-  animation: shadow-dance 0.5s ease-in-out infinite;
+  animation: shadow-dance calc(var(--animation-speed) / 2) ease-in-out infinite;
 }
 
 /* 음표 스타일 */

@@ -1,6 +1,8 @@
 import './AnimationControls.css';
 
-const AnimationControls = ({ isPlaying, onToggle }) => {
+const SPEED_OPTIONS = [0.5, 1, 1.5, 2];
+
+const AnimationControls = ({ isPlaying, onToggle, speed, onSpeedChange }) => {
   return (
     <div className="controls-container">
       <button
@@ -15,6 +17,21 @@ const AnimationControls = ({ isPlaying, onToggle }) => {
           {isPlaying ? '멈추기' : '춤추기'}
         </span>
       </button>
+
+      <div className="speed-controls">
+        <span className="speed-label">속도</span>
+        <div className="speed-buttons">
+          {SPEED_OPTIONS.map((option) => (
+            <button
+              key={option}
+              className={`speed-button ${speed === option ? 'active' : ''}`}
+              onClick={() => onSpeedChange(option)}
+            >
+              {option}x
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

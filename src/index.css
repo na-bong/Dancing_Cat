@@ -12,7 +12,19 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(
+    135deg,
+    #FFE5E5 0%,
+    #FFECD2 15%,
+    #FFFDE7 30%,
+    #E8F5E9 45%,
+    #E3F2FD 60%,
+    #EDE7F6 75%,
+    #FCE4EC 90%,
+    #FFE5E5 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
